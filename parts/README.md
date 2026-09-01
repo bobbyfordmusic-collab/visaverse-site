@@ -11,10 +11,12 @@ Printer: Bambu H2S, ASA.
 | `1_BASE.3mf` | 4662.953 cm³ | current |
 | `4_SHUTTER_LOWER.3mf` | 195.532 cm³ | current |
 | `5_SHUTTER_UPPER.3mf` | 184.175 cm³ | current |
+| `2_CROWN.3mf` | 224.108 cm³ | current |
+| `6_TABLET_SLAB.3mf` | 935.543 cm³ | current, do not modify |
 | `9_SILL_CAP.3mf` | 23.508 cm³ | current, do not modify |
 
-Not yet in this folder — re-add when available: `2_CROWN`, `3_LEFT_PANEL_DOOR`,
-`6_TABLET_SLAB`, `7_FAN_CARTRIDGE`, `8_DOOR_PULL`.
+Not yet in this folder — re-add when available: `3_LEFT_PANEL_DOOR`,
+`7_FAN_CARTRIDGE`, `8_DOOR_PULL`.
 
 ## Frozen — do not change
 
@@ -82,24 +84,29 @@ Sill cap interface
 - Seated at `du -0.453, dv 93.063, dw 109.513` the cap's top lands at 148.449,
   0.047 mm below the side-wall tops at 148.496.
 
-## Crown — open work, spec taken off the base
+## Crown
 
-The crown file is not here yet. Two fixes are outstanding, both measured against
-the base so they can be applied the moment it turns up.
+The crown ships in print orientation. Its assembly transform onto the base is
 
-1. **Stowing channel too narrow.** The crown carries the door's channel onward
-   past where the base's side walls stop. It is still cut for the old door.
-   Walls must go to `x = -131.62 / +128.40` — **260.02** clear against the
-   258.80 door — with faces at `-125.86 / +124.74`, so base and crown read as one
-   groove. Identical to the change already made to the base's stowing slot.
-2. **Too small for the slab.** The crown has to clear the slab in its installed
-   position. The base's sloped-face pocket opening measures
-   **-124.90 … +124.70 = 249.60 wide**, constant over v 20…200, against a slab
-   245.25 wide × 21.02 thick (edges ±122.625) — 2.175 mm a side. The crown's
-   opening must match that pocket at minimum.
+```
+base(x, y, z) = (132.30 - z_print,  y_print + 99.30,  x_print + 259.5347)
+```
 
-Do not disturb the crown's dowel interface with the base's top face at
-`z = 239.2747`.
+which lands its mating face on the base's top at `z = 239.2747` and its five
+dowel bores exactly on the base's dowels at (-126,108) (-126,124) (0,108)
+(124,124) (126,104). Keep that transform when checking anything against the base.
+
+- **Door channel**: walls at `-131.62 / +128.40`, **260.02** clear, over the
+  groove band `w 138.03…145.67`. Was -129.50 / +124.75 = 254.25 against a 258.80
+  door, and the right side had no groove at all — the same fault the base had.
+- **Slab clearance**: with the slab seated (`dv 98.0, dw 133.6` in the slope
+  frame, applied via `Tb`) the crown used to overlap it by 17.87 cm³ across the
+  full slab width. The seated slab dilated 0.40 mm on every face is now relieved
+  out of it. A thin cross rail at `v 229…231, w 135.0…137.2` sat inside the
+  slab's handle recess and was freed by that cut; it is gone deliberately.
+
+Crown checks: watertight, **one body**, print bounds unchanged, `crown ∩ base`
+and `crown ∩ seated slab` both 0.00000 cm³.
 
 ## Checks any base edit must still pass
 
