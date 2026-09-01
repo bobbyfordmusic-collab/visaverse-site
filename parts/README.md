@@ -82,6 +82,25 @@ Sill cap interface
 - Seated at `du -0.453, dv 93.063, dw 109.513` the cap's top lands at 148.449,
   0.047 mm below the side-wall tops at 148.496.
 
+## Crown — open work, spec taken off the base
+
+The crown file is not here yet. Two fixes are outstanding, both measured against
+the base so they can be applied the moment it turns up.
+
+1. **Stowing channel too narrow.** The crown carries the door's channel onward
+   past where the base's side walls stop. It is still cut for the old door.
+   Walls must go to `x = -131.62 / +128.40` — **260.02** clear against the
+   258.80 door — with faces at `-125.86 / +124.74`, so base and crown read as one
+   groove. Identical to the change already made to the base's stowing slot.
+2. **Too small for the slab.** The crown has to clear the slab in its installed
+   position. The base's sloped-face pocket opening measures
+   **-124.90 … +124.70 = 249.60 wide**, constant over v 20…200, against a slab
+   245.25 wide × 21.02 thick (edges ±122.625) — 2.175 mm a side. The crown's
+   opening must match that pocket at minimum.
+
+Do not disturb the crown's dowel interface with the base's top face at
+`z = 239.2747`.
+
 ## Checks any base edit must still pass
 
 - watertight, **43 bodies**, outer bounds unchanged to 1e-6
