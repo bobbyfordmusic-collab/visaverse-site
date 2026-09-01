@@ -11,7 +11,7 @@ Printer: Bambu H2S, ASA.
 | `1_BASE.3mf` | 4662.953 cm³ | current |
 | `4_SHUTTER_LOWER.3mf` | 195.532 cm³ | current |
 | `5_SHUTTER_UPPER.3mf` | 184.175 cm³ | current |
-| `2_CROWN.3mf` | 224.108 cm³ | current |
+| `2_CROWN.3mf` | 223.411 cm³ | current |
 | `6_TABLET_SLAB.3mf` | 935.543 cm³ | current, do not modify |
 | `9_SILL_CAP.3mf` | 23.508 cm³ | current, do not modify |
 
@@ -99,14 +99,21 @@ dowel bores exactly on the base's dowels at (-126,108) (-126,124) (0,108)
 - **Door channel**: walls at `-131.62 / +128.40`, **260.02** clear, over the
   groove band `w 138.03…145.67`. Was -129.50 / +124.75 = 254.25 against a 258.80
   door, and the right side had no groove at all — the same fault the base had.
-- **Slab clearance**: with the slab seated (`dv 98.0, dw 133.6` in the slope
-  frame, applied via `Tb`) the crown used to overlap it by 17.87 cm³ across the
-  full slab width. The seated slab dilated 0.40 mm on every face is now relieved
-  out of it. A thin cross rail at `v 229…231, w 135.0…137.2` sat inside the
-  slab's handle recess and was freed by that cut; it is gone deliberately.
+- **Slab clearance**: the crown is glued on permanently and the slab is fitted
+  and removed with it in place, so the crown is relieved over the whole motion,
+  not just the seated pose. The motion is: the slab's top slides in under the
+  crown, then the bottom drops into the sill; removal is the reverse. Modelled as
+  a rotation about a u-axis at the slab's top edge (`PIV = 0, 251.0, 128.9` in
+  slope coords, negative theta lifting the bottom out) combined with travel down
+  the slope. The swept slab over `theta 0…-12°, dv 0…-20`, grown 0.40 mm along
+  the slope normal, is subtracted. Seated pose is `dv 98.0, dw 133.6` via `Tb`.
+- A thin cross rail at `v 229…231, w 135.0…137.2` sat inside the slab's handle
+  recess and was freed by that cut; it is gone deliberately.
 
-Crown checks: watertight, **one body**, print bounds unchanged, `crown ∩ base`
-and `crown ∩ seated slab` both 0.00000 cm³.
+Crown checks: watertight, **one body**, print bounds unchanged, `crown ∩ base` =
+0.00000, and the slab's full install/remove path clear at every step —
+`theta` 0/-4/-8/-12 crossed with `dv` 0/-10/-20/-45 all read 0.0000 cm³.
+The base never blocks that motion; only the crown did (17.87 cm³ before).
 
 ## Checks any base edit must still pass
 
