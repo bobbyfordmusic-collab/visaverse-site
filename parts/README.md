@@ -11,7 +11,7 @@ Printer: Bambu H2S, ASA.
 | `1_BASE.3mf` | 4662.953 cm³ | current |
 | `4_SHUTTER_LOWER.3mf` | 195.532 cm³ | current |
 | `5_SHUTTER_UPPER.3mf` | 184.175 cm³ | current |
-| `2_CROWN.3mf` | 223.411 cm³ | current |
+| `2_CROWN.3mf` | 222.773 cm³ | current |
 | `6_TABLET_SLAB.3mf` | 935.543 cm³ | current, do not modify |
 | `9_SILL_CAP.3mf` | 23.508 cm³ | current, do not modify |
 
@@ -99,6 +99,16 @@ dowel bores exactly on the base's dowels at (-126,108) (-126,124) (0,108)
 - **Door channel**: walls at `-131.62 / +128.40`, **260.02** clear, over the
   groove band `w 138.03…145.67`. Was -129.50 / +124.75 = 254.25 against a 258.80
   door, and the right side had no groove at all — the same fault the base had.
+  The widening runs `v 190…280`, so assembled the channel is one uninterrupted
+  260.02 from `v 150` deep in the base, through the base/crown joint at `v ≈ 204`,
+  out to `v 252`. The base's stowing slot starts at `v ≈ 245` (slope
+  `w 65…105`), so the full-width channel covers the hand-off. Past `v 258` the
+  crown's own top structure closes in, by which point the door has turned down
+  into the slot.
+- **The channel never shares space with the slab.** The groove sits at
+  `u -131.62…-125.86` and `+124.74…+128.40`; the slab spans `±122.625`. Gap
+  3.235 mm left, 2.115 mm right — a pure `u` comparison, independent of any
+  assumption about the slab's height or depth.
 - **Slab clearance**: the crown is glued on permanently and the slab is fitted
   and removed with it in place, so the crown is relieved over the whole motion,
   not just the seated pose. The motion is: the slab's top slides in under the
