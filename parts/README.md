@@ -19,7 +19,18 @@ Not yet in this folder — re-add when available: `2_CROWN`, `3_LEFT_PANEL_DOOR`
 ## Frozen — do not change
 
 - **Left panel door fit.** Confirmed fitting on the printed base. The base's tab
-  openings and the door's tab tops are final.
+  openings and the door's tab tops are final. Measured on the base, so the fit is
+  recoverable even without the door file (base coords, left face):
+
+  | | y | z | depth |
+  |---|---|---|---|
+  | door face plane | | | `x = -132.200` |
+  | socket 1 | -96.00…-54.00 | 25.25…39.25 | 3.30 |
+  | socket 2 | -21.00…+21.00 | 25.00…39.25 | 3.30 |
+  | socket 3 | +49.00…+91.00 | 25.25…39.25 | 3.30 |
+
+  Three sockets, 42.00 wide × 14.00 tall × 3.30 deep, centres at y -75 / 0 / +70.
+  Three is the count — do not add or remove one.
 - **Front D-handle.** Final.
 - **Sill cap.** Final. The base is cut to suit the cap, never the reverse.
 - **Dowel holes.** On the absolute top face of the base, `z = 239.2747`, at
