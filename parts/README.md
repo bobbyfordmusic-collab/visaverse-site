@@ -8,7 +8,7 @@ Printer: Bambu H2S, ASA.
 
 | file | volume | state |
 |---|---|---|
-| `1_BASE.3mf` | 4666.858 cm³ | current |
+| `1_BASE.3mf` | 4662.953 cm³ | current |
 | `4_SHUTTER_LOWER.3mf` | 195.532 cm³ | current |
 | `5_SHUTTER_UPPER.3mf` | 184.175 cm³ | current |
 | `9_SILL_CAP.3mf` | 23.508 cm³ | current, do not modify |
@@ -66,6 +66,12 @@ Shutter channel
 
 The right wall is only 3.90 mm thick, so that side cannot be widened — lengthen
 the peg there instead. The channel runs clear through the sill on both sides.
+
+**Stowing slot** (top of the base, where the door parks when open). Its side
+walls must match the channel: `x = -131.62 / +128.40`, **260.02** clear, against
+a 258.80 door. It was 253.50 (-129.50 / +124.00) and jammed the door. Leaves the
+same 4.48 / 3.90 mm of outer wall. The dowel bores at x 0 / ±126 sit forward of
+the slot's y band and must not be touched when this is adjusted.
 
 Sill cap interface
 
