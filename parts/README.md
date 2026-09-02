@@ -13,7 +13,7 @@ Printer: Bambu H2S, ASA.
 | `5_SHUTTER_UPPER.3mf` | 184.175 cm³ | current |
 | `2_CROWN.3mf` | 222.773 cm³ | current |
 | `6_TABLET_SLAB.3mf` | 935.543 cm³ | current, do not modify |
-| `9_SILL_CAP.3mf` | 23.508 cm³ | current, do not modify |
+| `9_SILL_CAP.3mf` | 23.372 cm³ | current |
 | `10_DOWEL_PINS.3mf` | 6.293 cm³ | 8 pins on one plate (5 needed) |
 | `3_LEFT_PANEL_DOOR.3mf` | 100.324 cm³ | current, do not modify |
 | `8_DOOR_PULL.3mf` | 6.891 cm³ | current |
@@ -191,6 +191,44 @@ across the cavity.
   socket floor `z 41.50`, collar top `z 54.50`, leaving 2.98 mm of floor beneath
 - 18 x 11 collar, so 2.7 mm wall in x and 2.95 in y; 0.5 mm lead-in over the top 1 mm
 - verified: a 12.0 x 4.5 x 12 USB-A shell inserts at **0.00000 cm3**
+
+## Door pull
+
+The pull inserts into the lower shutter door. Its transform into the door's own
+frame is a flip about x plus a translation:
+
+```
+M = diag(1, -1, -1),  t = (-2.775, 0.825, 3.60)
+```
+
+- two built-in pegs, **Ø6.75 x 3.4 long**, at door x **-32.70 / +27.30**, y 0.75
+- they drop into sockets in the door's `z = 0` face, 6.60 x 6.80, **7.10 deep** —
+  so 3.4 mm of peg in a 7.1 mm socket
+- the pull's body then hangs below the door's outer face, door z -9.90 … 0
+- verified: **pull ∩ lower door = 0.00000 cm³**, and 0.0000 against base+crown
+  at every point of the door's travel
+
+Separately, the door meets the cap by magnets, not by the pull: the door carries
+pockets 10.00 x 6.00 x 2.15 at x ±55 on its `y = -7` edge, and the cap has
+matching recesses 10.2 x 6.4 x 2.58 at u ±54.85 on its `+v` face.
+
+## Sill cap — placement is NOT settled
+
+The cap's own screw holes do not match any hole set in the base, so its position
+along the slope is the least certain thing in the model. Two candidates:
+
+- `dv = 93.063` (from pairing the cap's M3 at u 127.000 with the base's
+  counterbore at u 126.547). Used for the seat cut at w 139.45. **But the lower
+  shutter door then overlaps the cap by 12.19 cm³.**
+- `dv ≈ 84…87`, sitting on the existing sill bar (top w 139.94). **Clears the
+  door completely (0.0000)** and puts the cap's front near the base's front face
+  at v -79.009. The base has four Ø2.3 pilots at v -77.62 breaking out on the
+  sill bar top, which look like cap screws.
+
+If the second is right, the seat cut at w 139.45 (`v` -73.05…-62.85) and the pad
+pockets at w 137.15 are in the wrong place — harmless extra clearance, but the
+cap should be landing on the sill bar instead. **Confirm against the printed
+parts before trusting any cap-related dimension here.**
 
 ## Checks any base edit must still pass
 
