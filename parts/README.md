@@ -301,6 +301,96 @@ The two panels are hinged **169.9 mm apart** (lower at cv, upper at cv + 169.9);
 at that offset they read 0.00000 against each other. Checking both at the same
 cv is meaningless.
 
+## Six-way cross-check audit — findings and fixes
+
+An independent six-agent audit was run against this exact file set. What it
+found, and what was done.
+
+### Fixed
+
+**Crown apex — the peg grooves missed the pegs entirely.** The crown's track is
+a clean circular arc (outer wall R 26.715 about base y 110.428 / z 249.078, rms
+residual 0.027 mm, turning 130.0 deg) but the groove had been cut on a straight
+tangent. It drifted outward, so over theta 60..102 deg the pegs met solid — worst
+4.10 mm at theta 84 — and at theta 85..95 the cut exited through the roof,
+severing the crown's visible top surface completely. Fixed by restoring the roof
+from the original crown (r >= 27.9, union, +0.293 cm3) then re-cutting the groove
+along the true arc (r 19.5..27.5, theta 40..120, -0.444 cm3). Verified by point
+containment: pegs clear at every angle 30..150, roof solid 28.00..31.75.
+
+**Base seam — a 0.07 mm skin capped the groove at the crown joint.** The
+stow-slot void stopped at z 239.20 against a top face at z 239.27, blocking the
+groove at the exact hand-off. Cut through (0.0124 cm3).
+
+**Sill cap — an unprintable 0.20 mm sliver tab.** The earlier pad trim left
+0.20 mm of tab on the right (u 123.05..123.25 seated) against 6.35 mm on the
+left. Removed (0.0048 cm3, bounds unchanged).
+
+**Panel hinge rod added.** See below.
+
+### Verified good — the one that could have killed the design
+
+The shutter's slat joint is a concentric pin-in-closed-bore knuckle hinge: pin
+Ø3.0921 in bore Ø4.0936, 0.5008 mm radial clearance, 10.000 mm pitch, 17 slats
+per panel. It articulates to **91.65 deg per joint** (3D boolean: 0.0000 mm3 at
+91 deg, 1.9867 mm3 at 92 deg), minimum bend radius 6.25 mm. The crown's curve
+demands **26.03 deg per joint** at a pin-circle radius of 21.95 mm.
+**Margin 3.52x.** The shutter bends far tighter than the crown asks. The slats
+also cannot pull apart — the bore is a closed circle, and +2.0 mm of tension
+gives 471 mm3 of interpenetration.
+
+### Open — needs a decision, not a cut
+
+- **The two panels have no hinge pin.** The panel joint at door y 170.000,
+  z 3.500 is properly interdigitated (7 lower knuckles + 6 upper, 244 of 258.8 mm
+  covered) and bored Ø2.220, but nothing in the file set fits it. A Ø2.10 x 250
+  printable rod has been added to `10_DOWEL_PINS.3mf` as a stopgap; **a 2 mm
+  steel rod 250 mm long is the better part.** Without it the shutter is two
+  loose halves.
+- **The door pull is on the inner face.** Sockets open on the panel's z = 0
+  face; the lettering (0.610 mm deep, z 6.390..7.000) is on the z = 7 face, and
+  w increases outward, so z = 7 is the visible side. The pull therefore points
+  into the display aperture where no finger reaches. It also rattles: peg
+  Ø4.980 in a 6.880 x 6.860 x 7.120 socket = 1.90 mm of slop. Not changed —
+  moving it alters a part already printed and in use.
+- **Shutter is permanent once the crown is glued.** Withdrawing a panel through
+  the sill mouth is blocked by 1,299..1,545 mm3 of base at slope v -78.77..-72.32
+  (a 1.26 mm raised sill floor) across nearly the full width; the crown is never
+  the obstruction. **Panels must be fed in from the rear/stow end before the
+  crown goes on**, and cannot be serviced afterwards.
+- **Only 2 of 6 crown dowel bores are true closed bores** ((-126,124) and
+  (124,124)). (0,108) has no crown bore at all and a pin there drives 10.63 mm
+  into the slab — **do not fit a pin at (0,108)**. (0,126), (126,104) and
+  (-126,108) are partial. Pre-existing in the supplied crown.
+- **Slab seat.** The model's seated slab rests on a ~1 mm wide ramp crest at
+  u 119.8..121.0, v 210..231 rather than on the pocket floor, which measures
+  w 117.10 + 0.00271*v. Dropped onto the real floor the slab sits 0.7..1.6 mm
+  lower and the door clears it — which is what the printed parts do. Not
+  touched: the base pocket is frozen by instruction.
+- **Slot taper, z 174..184.** The slot narrows 9.39 -> 7.81 mm perpendicular
+  then steps back to 9.39. Against a 7.00 mm door that is 0.81 mm of clearance,
+  not an interference. An attempt to open it removed 5.8 cm3 from the 3.2 mm rib
+  behind the slot without widening the slot, and was reverted.
+- **Magnet pockets** measure 20.240 x 6.240 x 2.150 centred x = +-60.000, not
+  10 x 6 at +-55; the cap recesses are 20.6 x 6.55 x 2.62 at u -60.48 / +59.53.
+  Glue the magnets to the outboard end of each slot. Stack depth 4.77 mm — use
+  2 mm magnets.
+- **Lettering** is chopped by the barrel crowns into three 3.95 mm stripes,
+  losing ~60% of each glyph. It does not weaken the panel.
+
+### Slicing notes (not model changes)
+
+- **Rotate the base 90 deg on the plate.** As modelled, 310.26 mm on the 320 mm
+  axis leaves 4.87 mm a side — no room for a brim. Rotated: 19.9 / 25.8 mm.
+- Slab fits the 350 mm axis only (14.5 mm a side). Sill cap needs rotating onto
+  its flat top face; the door pull prints bar-down.
+- Keep the support threshold at or below 35 deg, or trees grow inside the stow
+  slot and the sloped cavity where they cannot be removed.
+- The 42 sealed voids in the foot are the rib plinths, on a 30 mm grid, 5.00 mm
+  minimum wall — deliberate, not debris.
+- The 66 small bodies on the shutter panels are the sacrificial snap-off pads
+  under each rod end (0.31 mm gap). Deliberate — do not delete them.
+
 ## Checks any base edit must still pass
 
 - watertight, **43 bodies**, outer bounds unchanged to 1e-6
