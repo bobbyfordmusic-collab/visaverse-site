@@ -438,6 +438,69 @@ is located by the two sound crown bores at (-126,124) and (124,124), 250 mm
 apart, plus glue. **Do not fit a pin at (0,108)** - the crown has no bore there
 and a pin drives 10.63 mm into the slab's space.
 
+## Shutter retention — can the door slip out of its track?
+
+No. Measured along the whole run, base and crown together.
+
+The track is a **plain slot**, not a grooved rail: void from x -131.60 to
++128.38 across the full w band at every station. What retains the shutter is a
+**lip** over the slot's roof at each edge; inboard of it the slot is open,
+because that is the display aperture.
+
+| | |
+|---|---|
+| rod-end span (the guide feature) | -130.980 .. +127.800 = **258.780** |
+| slot | -131.60 .. +128.38 = **259.98** |
+| total lateral play | **1.20 mm** (0.60 a side) |
+| lip inner edge, left | -124.80 (base, v -60..192) / -126.00 (crown, v 204+) |
+| lip inner edge, right | +124.60 everywhere |
+| **engagement, left** | **6.18 mm** base, 4.98 mm crown |
+| **engagement, right** | **3.20 mm** throughout |
+
+The lip is continuous from v -60 to v 240 with no gap on either side. For the
+rod to clear the lip the door would have to shift **3.20 mm sideways**, and the
+slot only allows **1.20 mm total**. Disengagement is geometrically impossible.
+
+(An earlier scan of the base alone showed the lip vanishing at v=200. That is
+the hand-off: above v~192 the roof is provided by the crown, not the base.
+Base and crown must be tested together or the result is meaningless.)
+
+**Why the right side is not deepened.** It could go from 3.20 to about 4.40 mm
+by moving the right lip inboard to +123.4 — but the tablet slab's edge is at
++122.625, so the lip would then sit 0.775 mm from it and any further would trap
+the slab so it cannot be lifted out. The gain is 1.2 mm of engagement on a joint
+that already cannot disengage, paid for in aperture width and slab clearance.
+Not taken.
+
+## Dowel bores — why the remaining three are left alone
+
+Each has a fix that costs more than the defect:
+
+- **(0,126)** loses its rear wall above z ~231. The wall would have to be built
+  into the stow slot's mouth, which the door passes through.
+- **(-126,124)** / **(124,124)** rear walls taper to 0.008 mm at the top face.
+  Same problem, same place.
+- **(-126,108)** is pinched 1.00 mm out of round at z 224.4..225.0, costing
+  1.19 mm of full-diameter depth (13.78 usable instead of 14.97). Re-cutting it
+  round would leave only **0.84 mm** of outer wall over that 0.7 mm of height -
+  worse than losing 1.19 mm of pin depth that is not needed.
+
+Use the four corner positions. **Do not pin (0,108)** - no crown bore, and a pin
+drives 10.63 mm into the slab's space.
+
+## Shutter orientation — settled
+
+The panel's **z = 0 face is the first layer and faces outward when installed.**
+The lettering and the door-pull sockets are both on it, deliberately: the pull
+must be reachable, and the first-layer face is what the paint-fill tool selects
+for a colour change. The lettering being broken into three glyph bands by the
+hinge barrels is a known and accepted trade for that.
+
+Any w-mapping that puts door z = 0 at the low-w (tablet) side is inverted. This
+does not affect the track analysis - the rod band sits symmetric within the
+plate to 0.05 mm - but it does invert the pull, and an audit reading it the
+wrong way will report the pull as ploughing into the slab. It does not.
+
 ## Checks any base edit must still pass
 
 - watertight, **43 bodies**, outer bounds unchanged to 1e-6
