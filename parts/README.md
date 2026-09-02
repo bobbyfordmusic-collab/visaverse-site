@@ -391,6 +391,53 @@ gives 471 mm3 of interpenetration.
 - The 66 small bodies on the shutter panels are the sacrificial snap-off pads
   under each rod end (0.31 mm gap). Deliberate — do not delete them.
 
+## Audit follow-up — second pass
+
+**Fixed this pass**
+
+- Base **left sill pilot moved 0.800 mm** (u -130.800 -> -130.000). The sill cap
+  seats at **u = 0**, proved three ways: the cap's x extents equal the base's
+  exactly, its magnet recesses then coincide with the shutter's pockets to
+  0.00 mm, and its right M3 hole already landed dead on the base pilot at
+  u +127.000. Only the left pilot was out. Both now match.
+- **0.22 mm floating membrane removed** from the panel-door opening
+  (x -132.19..-131.97, y 107..117, z 31..43). Attached to nothing, below one
+  extrusion width. Pre-existing, not introduced by the track work.
+- **Cavity floor wedge closed** (+0.5054 cm3). A hairline void ran the full
+  244 mm width at z 40.97..43.66, opening from 0.075 mm at y 101 to 0.815 at
+  y 105, splitting the 8.03 mm floor into two ~4 mm slabs.
+- **Hinge rod removed** from 10_DOWEL_PINS. The panel-to-panel joint takes a cut
+  length of **1.75 mm filament** through the overlapping knuckles (Ø2.220 bore,
+  0.47 mm slack) - the intended assembly method.
+
+**Corrected audit findings that were wrong**
+
+- Magnet pockets are **not** 5 mm out of position. Door pockets centre on
+  x +-60.000, cap recesses on u -60.45 / +59.55; that 0.45 mm is exactly the
+  cap's misplacement, and at u = 0 they coincide. The "expected +-55" they were
+  judged against was my own bad number.
+- The slot "pinch" at z 174..184 measures **7.81 mm** perpendicular, not 6.91 -
+  0.81 mm of clearance against a 7.00 mm door, not an interference.
+- The reported "slab 0.815 mm proud" is a seating artefact: the model's slab
+  rests on a ~1 mm ramp crest rather than the pocket floor.
+
+**Deliberately NOT cut, and why**
+
+The three dowel-bore complaints are real but not worth the risk:
+
+- **(0,126)** loses its rear wall above z ~231 (2.60 mm at z 228 -> 0.90 at
+  z 230 -> 0 at z 232). Adding a wall means putting material into the stow
+  slot's mouth, which is exactly where the door has to pass.
+- **(-126,124)** and **(124,124)** rear walls taper 1.477 (z 234) -> 0.776
+  (z 236) -> 0.008 mm (z 239) and print open at the very top face.
+- **(-126,108)** is pinched 1.00 mm out of round at its floor; full-diameter
+  depth is 13.78 mm rather than 14.97.
+
+All six bores still measure a round 6.40 at z 228/232/236, and the crown joint
+is located by the two sound crown bores at (-126,124) and (124,124), 250 mm
+apart, plus glue. **Do not fit a pin at (0,108)** - the crown has no bore there
+and a pin drives 10.63 mm into the slab's space.
+
 ## Checks any base edit must still pass
 
 - watertight, **43 bodies**, outer bounds unchanged to 1e-6
