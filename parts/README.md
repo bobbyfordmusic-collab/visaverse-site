@@ -8,16 +8,18 @@ Printer: Bambu H2S, ASA.
 
 | file | volume | state |
 |---|---|---|
-| `1_BASE.3mf` | 4663.350 cm³ | current |
+| `1_BASE.3mf` | 4663.848 cm³ | current |
 | `4_SHUTTER_LOWER.3mf` | 195.532 cm³ | current |
 | `5_SHUTTER_UPPER.3mf` | 184.175 cm³ | current |
 | `2_CROWN.3mf` | 222.773 cm³ | current |
 | `6_TABLET_SLAB.3mf` | 935.543 cm³ | current, do not modify |
 | `9_SILL_CAP.3mf` | 23.508 cm³ | current, do not modify |
 | `10_DOWEL_PINS.3mf` | 6.293 cm³ | 8 pins on one plate (5 needed) |
+| `3_LEFT_PANEL_DOOR.3mf` | 100.324 cm³ | current, do not modify |
+| `8_DOOR_PULL.3mf` | 6.891 cm³ | current |
 
-Not yet in this folder — re-add when available: `3_LEFT_PANEL_DOOR`,
-`7_FAN_CARTRIDGE`, `8_DOOR_PULL`.
+`7_FAN_CARTRIDGE` is **retired** — the fan now mounts directly in the base, so
+that part is no longer printed.
 
 ## Frozen — do not change
 
@@ -148,6 +150,44 @@ Crown-to-base locating pins, `10_DOWEL_PINS.3mf` — 8 on a plate, 5 are needed.
 - Verified: pin seated on the bore floor reads ≤ 0.00088 cm³ against the base and
   0.00000 against the crown at all five positions, with 14.97 mm of engagement
   below the joint and 13.03 above.
+
+## Fan mount
+
+The fan mounts straight into the base; there is no cartridge. Fan is a 5010 —
+50 x 50 x 10 mm, 40 mm bolt pattern, Ø4.5 holes — and it **blows toward the slab,
+drawing from the interior cavity**.
+
+Cavity, in slope coords, fan centre `(u, v) = (-2.0, 75.0)`:
+
+| w | feature |
+|---|---|
+| 93.0 … 97.4 | 56 x 60 mouth (was the cartridge rebate, now just a lead-in) |
+| 97.4 … 107.42 | **51.0 x 51.0 pocket, 10.02 deep** — the fan drops in here from the cavity |
+| 107.42 | **the ledge** the fan bottoms on |
+| 107.42 … 115.25 | 46 x 46 throat, air passes through toward the slab |
+
+The ledge already existed. What was missing was anything to screw into: the fan's
+bolt holes sit ±20 mm from its centre, which is inside the 46 mm throat, so there
+was no material there at all. Four **10 x 10 pads** are added in the throat
+corners at the bolt positions, rising 6.58 mm off the ledge, each with a **Ø3.4
+pilot 6.16 mm deep** for an M4 self-tapper. Bolt positions in slope coords:
+(-22,55) (-22,95) (18,55) (18,95); in base coords (-22,-26.87,117.65)
+(-22,3.78,143.35) (18,-26.87,117.65) (18,3.78,143.35).
+
+Verified: a 50 x 50 x 10 block seated on the ledge reads 0.00857 cm³ against the
+base (corner film only — real fan frames are radiused), all four pilots probe at
+exactly 3.40 wide and blind.
+
+## USB park
+
+A parking socket for the fan lead's USB-A male end, so it has somewhere to live
+when unplugged. It is in the **ceiling of the interior cavity** — the underside
+of the slab-pocket floor — 44 mm to the right of the fan, opening downward into
+the cavity.
+
+- slope `(u, v) = (42.0, 75.0)`, mouth at `w 93.00`; base coords `(42.0, -2.28, 119.45)`
+- **12.6 x 5.1**, **13.48 mm deep**, with a 0.5 mm lead-in over the first 1 mm
+- cut into 22.2 mm of solid, so ~8.8 mm of material remains above it
 
 ## Checks any base edit must still pass
 
