@@ -248,9 +248,65 @@ with no lump anywhere. The printed parts do not catch, so the model's slab seat
 is ~0.8 mm shallower than the real one. Nothing has been cut for this; it is
 recorded so the number is not re-derived as a fault.
 
+## The door track — full path, verified (pre-print audit)
+
+The shutter's guide pegs are **discrete**: 3 mm long, every 10 mm, on both edges
+— 16 pairs on the lower panel, 17 on the upper. They run the whole length of
+both panels, so they must follow the track everywhere, including down into the
+stow slot.
+
+Door cross-section (w = door z + 138.675):
+
+| band | width |
+|---|---|
+| 138.675 – 140.42  body underside | 253.20 |
+| 140.42  – 143.92  **guide pegs** | **258.80** |
+| 143.92  – 144.92 | 249.50 |
+| 144.92  – 147.48  raised back | 240.57 |
+
+Only the 3.5 mm peg band needs 258.80; above and below, the door is far
+narrower. A clearance check that demands peg width across the door's whole
+thickness will report false failures — the crown's channel roof is legitimately
+250.75 there.
+
+**The track must be 260.02 wide over its entire length.** Two stretches were
+still at the original 253.50 and were cut on this pass:
+
+- **base, stow slot, z 36 – 176** — the slot runs z 36 → 236 and only its top
+  58 mm had been widened. The door would have entered and jammed 58 mm down.
+  Cut as a 10.02 deg tilted prism (centre plane `N.(y,z) = 111.28`,
+  `N = (0, 0.9848, -0.1740)`, along `D = (0, 0.1740, 0.9848)`), 12.603 cm3.
+- **crown, return leg, z 239 – 275** — the leg that hands the door back down
+  into the stow slot. Its slope leg was already 260.02; the return leg was not.
+  Cut as a swept polygon following the leg's measured outer edge, with r 4.0
+  protection cylinders on all six dowel axes, 2.253 cm3.
+
+Verified after: 260.02 continuous from the bottom of the slot (z 47) to the top
+of the crown, confirmed by point containment on both legs; all six base dowel
+bores still round at 6.40; no crown bore opened any further than it already was.
+
+Walls left outside the track are 4.48 mm left / 3.90 mm right everywhere —
+the same as the stretch that already prints.
+
+## What the rigid model cannot check
+
+The shutter is segmented (49 / 51 bodies) and bends round the crown. A rigid
+translation of the panels reads ~6.9 cm3 into the crown at every position; that
+figure is fixed at slope v 252.6..269.0 and does not move with the door, i.e. it
+is the flat plate ploughing through the curve, not a collision. Below the curve
+every position reads 0.0000. The curve is instead verified by track width, which
+now holds 260.02 all the way round.
+
+The two panels are hinged **169.9 mm apart** (lower at cv, upper at cv + 169.9);
+at that offset they read 0.00000 against each other. Checking both at the same
+cv is meaningless.
+
 ## Checks any base edit must still pass
 
 - watertight, **43 bodies**, outer bounds unchanged to 1e-6
+- the stow slot holds **260.02 mm** from z 47 to z 236, and the crown
+  carries 260.02 round both legs — check by point containment, not by
+  ray casting (coplanar boolean faces make a ray scanner report false narrows)
 - all six dowel holes open **and still round** (6.30, or 6.40 at x=0)
 - both shutter doors sweep their full travel at **0.0000 cm³** interference
 - sill cap seats at ≤ 5e-4 cm³ (contact only, zero-thickness lumps)
