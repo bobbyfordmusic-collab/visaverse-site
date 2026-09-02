@@ -212,23 +212,41 @@ Separately, the door meets the cap by magnets, not by the pull: the door carries
 pockets 10.00 x 6.00 x 2.15 at x ±55 on its `y = -7` edge, and the cap has
 matching recesses 10.2 x 6.4 x 2.58 at u ±54.85 on its `+v` face.
 
-## Sill cap — placement is NOT settled
+## Sill cap — placement, and the door's closed stop
 
-The cap's own screw holes do not match any hole set in the base, so its position
-along the slope is the least certain thing in the model. Two candidates:
+`dv = 93.063` (the cap's M3 at u 127.000 paired with the base's counterbore at
+u 126.547). This is correct and is confirmed by the magnets, not just the screws.
 
-- `dv = 93.063` (from pairing the cap's M3 at u 127.000 with the base's
-  counterbore at u 126.547). Used for the seat cut at w 139.45. **But the lower
-  shutter door then overlaps the cap by 12.19 cm³.**
-- `dv ≈ 84…87`, sitting on the existing sill bar (top w 139.94). **Clears the
-  door completely (0.0000)** and puts the cap's front near the base's front face
-  at v -79.009. The base has four Ø2.3 pilots at v -77.62 breaking out on the
-  sill bar top, which look like cap screws.
+The lower shutter door does not slide *over* the cap — its bottom edge **bumps
+into** the cap, and that contact is what closes the shutter and brings the two
+magnet pairs together.
 
-If the second is right, the seat cut at w 139.45 (`v` -73.05…-62.85) and the pad
-pockets at w 137.15 are in the wrong place — harmless extra clearance, but the
-cap should be landing on the sill bar instead. **Confirm against the printed
-parts before trusting any cap-related dimension here.**
+- cap's facing surface (max v over the door's w band): **v -62.949**
+- door's bottom edge: its own `y = -7`, so contact at **cv = -55.949**
+- door magnet pockets 10.00 x 6.00 x 2.15 deep, centred x ±55.00, opening on the
+  `y=-7` edge
+- cap magnet recesses 10.03 x 6.4 x 2.58 deep, centred u -55.17 / +54.26 seated
+  (±54.715 in the cap's own frame), opening on the v -62.949 face
+- pocket pair meets face to face, 4.73 mm of combined depth for the magnet stack
+
+At `cv = -55.949` the door reads 0.0029 cm³ against the cap (the contact plane
+itself) and **0.0000 against the base, the crown and the door pull**. The whole
+travel from that stop up to fully stowed is 0.0000 everywhere.
+
+Any interference figure quoted for `cv` below -55.949 is meaningless — it is the
+door driven past its physical stop, into the cap. An earlier note here claimed a
+12.19 cm³ door/cap clash and a candidate cap position ~8 mm further forward; both
+came from sweeping the door past the stop. There is no such clash.
+
+## Known model-vs-print discrepancy
+
+With the slab seated at `dv 98.0, dw 133.6` the slab's top face reads w 139.49
+while the closed door's underside reads w 138.675 — the door plane passes
+**0.802 mm** below the slab top, so the model shows a uniform 0.80 mm film of
+overlap (2.74 cm³ lower, 2.45 cm³ upper) spread flat across the slab's whole top,
+with no lump anywhere. The printed parts do not catch, so the model's slab seat
+is ~0.8 mm shallower than the real one. Nothing has been cut for this; it is
+recorded so the number is not re-derived as a fault.
 
 ## Checks any base edit must still pass
 
