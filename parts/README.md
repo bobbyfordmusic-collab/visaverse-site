@@ -8,12 +8,13 @@ Printer: Bambu H2S, ASA.
 
 | file | volume | state |
 |---|---|---|
-| `1_BASE.3mf` | 4662.953 cm³ | current |
+| `1_BASE.3mf` | 4663.350 cm³ | current |
 | `4_SHUTTER_LOWER.3mf` | 195.532 cm³ | current |
 | `5_SHUTTER_UPPER.3mf` | 184.175 cm³ | current |
 | `2_CROWN.3mf` | 222.773 cm³ | current |
 | `6_TABLET_SLAB.3mf` | 935.543 cm³ | current, do not modify |
 | `9_SILL_CAP.3mf` | 23.508 cm³ | current, do not modify |
+| `10_DOWEL_PINS.3mf` | 6.293 cm³ | 8 pins on one plate (5 needed) |
 
 Not yet in this folder — re-add when available: `3_LEFT_PANEL_DOOR`,
 `7_FAN_CARTRIDGE`, `8_DOOR_PULL`.
@@ -72,8 +73,14 @@ the peg there instead. The channel runs clear through the sill on both sides.
 **Stowing slot** (top of the base, where the door parks when open). Its side
 walls must match the channel: `x = -131.62 / +128.40`, **260.02** clear, against
 a 258.80 door. It was 253.50 (-129.50 / +124.00) and jammed the door. Leaves the
-same 4.48 / 3.90 mm of outer wall. The dowel bores at x 0 / ±126 sit forward of
-the slot's y band and must not be touched when this is adjusted.
+same 4.48 / 3.90 mm of outer wall.
+
+**The slot cut must be clamped to `y >= 128`.** The dowel bores at (-126,124) and
+(124,124) span y 120.85…127.15, and an unclamped cut reaches them and turns those
+two bores into open-sided slots (they measured 8.75 and 7.50 wide instead of
+6.30). The slot's full-width band does not start until y ~130, so nothing is
+lost by the clamp. After any slot edit, re-measure **all six** bores, not just
+the four at y 104/108/126.
 
 Sill cap interface
 
@@ -125,10 +132,27 @@ Crown checks: watertight, **one body**, print bounds unchanged, `crown ∩ base`
 `theta` 0/-4/-8/-12 crossed with `dv` 0/-10/-20/-45 all read 0.0000 cm³.
 The base never blocks that motion; only the crown did (17.87 cm³ before).
 
+## Dowel pins
+
+Crown-to-base locating pins, `10_DOWEL_PINS.3mf` — 8 on a plate, 5 are needed.
+
+- **6.00 dia x 28.0 long**, 0.5 x 45° chamfer each end, printed standing.
+- Bores: base **6.30** dia (6.40 at x=0), blind, floor `z 224.30`, depth 14.97.
+  Crown **6.36** dia, depth 15.00. Pin gives 0.15 mm radial clearance in the
+  tightest base bore, 0.18 in the crown.
+- 28.0 against 14.97 + 15.00 = 29.97 of hole, so ~1 mm spare at each end — the
+  pin can never hold the crown off the base.
+- Five positions have a bore in **both** parts: (-126,108) (-126,124) (0,108)
+  (124,124) (126,104). The base's sixth bore at **(0,126) has no crown mate** —
+  leave it empty.
+- Verified: pin seated on the bore floor reads ≤ 0.00088 cm³ against the base and
+  0.00000 against the crown at all five positions, with 14.97 mm of engagement
+  below the joint and 13.03 above.
+
 ## Checks any base edit must still pass
 
 - watertight, **43 bodies**, outer bounds unchanged to 1e-6
-- all six dowel holes open
+- all six dowel holes open **and still round** (6.30, or 6.40 at x=0)
 - both shutter doors sweep their full travel at **0.0000 cm³** interference
 - sill cap seats at ≤ 5e-4 cm³ (contact only, zero-thickness lumps)
 - lower door hinge bore clear from the left edge to 121.95, blind stop intact
