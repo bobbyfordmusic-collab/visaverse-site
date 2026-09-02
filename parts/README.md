@@ -8,7 +8,7 @@ Printer: Bambu H2S, ASA.
 
 | file | volume | state |
 |---|---|---|
-| `1_BASE.3mf` | 4663.848 cm³ | current |
+| `1_BASE.3mf` | 4665.459 cm³ | current |
 | `4_SHUTTER_LOWER.3mf` | 195.532 cm³ | current |
 | `5_SHUTTER_UPPER.3mf` | 184.175 cm³ | current |
 | `2_CROWN.3mf` | 222.773 cm³ | current |
@@ -180,14 +180,17 @@ exactly 3.40 wide and blind.
 
 ## USB park
 
-A parking socket for the fan lead's USB-A male end, so it has somewhere to live
-when unplugged. It is in the **ceiling of the interior cavity** — the underside
-of the slab-pocket floor — 44 mm to the right of the fan, opening downward into
-the cavity.
+A parking socket for the fan lead's USB-A male end. It sits on the **cavity floor,
+back right** (base coords), so the slack lies on the floor instead of hanging
+across the cavity.
 
-- slope `(u, v) = (42.0, 75.0)`, mouth at `w 93.00`; base coords `(42.0, -2.28, 119.45)`
-- **12.6 x 5.1**, **13.48 mm deep**, with a 0.5 mm lead-in over the first 1 mm
-- cut into 22.2 mm of solid, so ~8.8 mm of material remains above it
+- centre `(x, y) = (100.0, 95.0)`, opening **12.6 x 5.1**, **13.0 mm deep**
+- the floor there is only 7.95 mm thick (solid `z 38.55...46.50`) and the thicker
+  rib further back is just 4.15 mm wide in y, so neither takes a sunk socket.
+  The socket is instead sunk 5.0 mm into the floor with an 8.0 mm collar above:
+  socket floor `z 41.50`, collar top `z 54.50`, leaving 2.98 mm of floor beneath
+- 18 x 11 collar, so 2.7 mm wall in x and 2.95 in y; 0.5 mm lead-in over the top 1 mm
+- verified: a 12.0 x 4.5 x 12 USB-A shell inserts at **0.00000 cm3**
 
 ## Checks any base edit must still pass
 
