@@ -90,7 +90,7 @@ Sill cap interface
   `v` -73.05…-62.85, full width.
 - The cap has a 2.25 mm pad under each end (left `u` -136.10…-122.20, right
   `u` 115.20…132.30, front 8.50 mm). Clearance pockets are cut to w 137.15.
-- Seated at `du -0.453, dv 93.063, dw 109.513` the cap's top lands at 148.449,
+- Seated at `du 0, dv 93.063, dw 109.513` the cap's top lands at 148.449,
   0.047 mm below the side-wall tops at 148.496.
 
 ## Crown
@@ -214,8 +214,10 @@ matching recesses 10.2 x 6.4 x 2.58 at u ±54.85 on its `+v` face.
 
 ## Sill cap — placement, and the door's closed stop
 
-`dv = 93.063` (the cap's M3 at u 127.000 paired with the base's counterbore at
-u 126.547). This is correct and is confirmed by the magnets, not just the screws.
+`dv = 93.063`, **`du = 0`** (the cap's x extents equal the base's exactly, its
+magnet recesses coincide with the shutter's pockets, and both M3 holes land on
+the base pilots now that the left pilot has been moved). An earlier `du = -0.453`
+was wrong and has been retired everywhere.
 
 The lower shutter door does not slide *over* the cap — its bottom edge **bumps
 into** the cap, and that contact is what closes the shutter and brings the two
@@ -555,3 +557,13 @@ bed. Costs nothing and changes no geometry.
 - both shutter doors sweep their full travel at **0.0000 cm³** interference
 - sill cap seats at ≤ 5e-4 cm³ (contact only, zero-thickness lumps)
 - lower door hinge bore clear from the left edge to 121.95, blind stop intact
+
+## Sill cap — left pad trimmed at u = 0
+
+With the cap correctly at u = 0 its left pad's inner edge sat at u -122.25,
+0.375 mm inboard of the slab's edge at -122.625, digging into the slab's corner
+over the pad's 2.29 mm depth (cap ^ slab read 0.04502 cm3 with w from 137.20).
+The pad is trimmed back to **u -123.05** (0.425 clear); cap ^ slab is again the
+0.040 mm face film (w 139.450..139.490), cap ^ base 0.00010, bounds unchanged,
+0.0129 cm3 removed. Pads now: left -128.60..-123.05 only; the right pad was
+removed earlier for the same reason.
