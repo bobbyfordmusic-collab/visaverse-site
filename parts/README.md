@@ -567,3 +567,19 @@ The pad is trimmed back to **u -123.05** (0.425 clear); cap ^ slab is again the
 0.040 mm face film (w 139.450..139.490), cap ^ base 0.00010, bounds unchanged,
 0.0129 cm3 removed. Pads now: left -128.60..-123.05 only; the right pad was
 removed earlier for the same reason.
+
+## Stow slot — last 5 mm to the floor
+
+The slot floor is at z ~35 (nothing below z 32). The deep-slot widening was a
+straight tilted prism, and the slot bends toward lower y over its last 5 mm
+(y 104..120 at z 35..42, where the straight centreline predicts 119), so the
+prism missed it: at z 36..40 the right strip still read 124.00 and the rod ends
+would have stopped on a 2.6 mm step 5 mm above the floor - a wedging stop, not a
+flat one. Both strips are now cut to the floor over the slot's actual band
+(y 103..121, z 34.5..44), 0.5826 cm3. With the panel door fitted the slot reads
+260.60 at z 36..42 (door face -132.20 / strip 128.40) and 260.02 at z 44.
+
+Note on the left side there: over y ~106..118, z ~36..41 the base has no wall
+of its own between the slot and the panel-door recess - the two pockets nearly
+touch and the only thing the original file had there was a 0.22 mm membrane,
+unprintable. The fitted door's inner face (x -132.20) closes that corner.
