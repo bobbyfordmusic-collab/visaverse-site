@@ -501,6 +501,50 @@ does not affect the track analysis - the rod band sits symmetric within the
 plate to 0.05 mm - but it does invert the pull, and an audit reading it the
 wrong way will report the pull as ploughing into the slab. It does not.
 
+## Door pull — fit corrected, face left alone
+
+The pull's shank is a **Ø4.980 x 3.4 peg** followed by a **Ø6.95 x 2.4 locating
+boss**. The door's sockets were **Ø6.880** - 0.07 mm too small for the boss, so
+the boss could not enter and the pull hung on the peg with 1.90 mm of diametral
+slop. That 0.07 mm near-miss is the tell: the boss was always the intended
+locating feature.
+
+Sockets opened to **Ø7.290** and re-centred on the pull's own axes (door
+x -32.775 / +27.225, y 0.825; the old ones sat 0.075 mm off). The boss now
+enters with 0.17 mm per side and locates the pull over 2.4 mm, with the 1.63 mm
+floor behind the socket intact. `pull ^ lower panel = 0.00000 cm3`.
+
+The pull's **face is unchanged**. Door z = 0 is the first printed layer and
+faces outward when installed - which is why the pull sockets and the lettering
+are both on it.
+
+## Crown print orientation — measured, not assumed
+
+**Print the crown standing, as modelled.** Support-needing area by orientation:
+
+| orientation | envelope | overhang needing support |
+|---|---|---|
+| **standing (as modelled)** | 40.5 x 88.8 x 268.4 | **5,018 mm2** |
+| lying, Y90 then X90 | 268.4 x 40.5 x 88.8 | 14,756 mm2 |
+| lying, Y90 | 268.4 x 88.8 x 40.5 | 24,928 mm2 |
+
+Standing wins by 3-5x, because every lying orientation puts supports inside the
+door track where they cannot be removed. The tall aspect ratio (6.6) is the
+price; use a brim.
+
+**The flange chamfer is NOT worth doing.** The crown is a dumbbell - large at
+both ends, thin through the middle - so standing always leaves one large end in
+the air. At print z 258.3 the section jumps 640 -> 1428 mm2, and the newly
+appearing 1,045.6 mm2 reaches up to **32.09 mm** from the nearest supported
+material (patches at 32.09, 17.29 and 15.76 mm). A 45-degree ramp for that is a
+32 mm buttress, not a chamfer, and it would land on the crown's mating end.
+Flipping end-for-end does not help; the other end is large too.
+
+**Do this instead, in the slicer:** allow supports to rest on the model rather
+than build-plate-only. The shaft sits directly beneath the flange, so tree
+supports branch off it in a few millimetres instead of towering 258 mm from the
+bed. Costs nothing and changes no geometry.
+
 ## Checks any base edit must still pass
 
 - watertight, **43 bodies**, outer bounds unchanged to 1e-6
