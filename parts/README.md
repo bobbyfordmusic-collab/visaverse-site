@@ -355,11 +355,6 @@ gives 471 mm3 of interpenetration.
   into the display aperture where no finger reaches. It also rattles: peg
   Ø4.980 in a 6.880 x 6.860 x 7.120 socket = 1.90 mm of slop. Not changed —
   moving it alters a part already printed and in use.
-- **Shutter is permanent once the crown is glued.** Withdrawing a panel through
-  the sill mouth is blocked by 1,299..1,545 mm3 of base at slope v -78.77..-72.32
-  (a 1.26 mm raised sill floor) across nearly the full width; the crown is never
-  the obstruction. **Panels must be fed in from the rear/stow end before the
-  crown goes on**, and cannot be serviced afterwards.
 - **Only 2 of 6 crown dowel bores are true closed bores** ((-126,124) and
   (124,124)). (0,108) has no crown bore at all and a pin there drives 10.63 mm
   into the slab — **do not fit a pin at (0,108)**. (0,126), (126,104) and
@@ -583,3 +578,44 @@ Note on the left side there: over y ~106..118, z ~36..41 the base has no wall
 of its own between the slot and the panel-door recess - the two pockets nearly
 touch and the only thing the original file had there was a 0.22 mm membrane,
 unprintable. The fitted door's inner face (x -132.20) closes that corner.
+
+## Shutter installation — from the FRONT, retained by the sill cap
+
+This is the design intent and it is correct. An earlier note in this file said
+the shutter had to be fed in from the rear before the crown was bonded, and that
+it was unserviceable afterwards. **That was wrong** - it came from a rigid-body
+sweep that slid a whole 180 mm panel forward at a fixed depth, which of course
+grinds into the sill lip. It never modelled laying the panel in at the mouth.
+
+Measured at the sill mouth (base + crown, free depth in w):
+
+| v | free w at u -120 / -60 / 0 / 60 / 120 |
+|---|---|
+| -80 | 136.0..158.0 everywhere |
+| **-75** | **140.0..158.0** (the lip forces the floor up here) |
+| -72 | 137.1..158.0 |
+| -68 and back | 136.0..158.0 |
+
+The lip tops at **w 139.939**, 1.26 mm proud of the door's underside at 138.675 -
+but there is **18 mm of clear depth above it**, against an 8.80 mm panel. So the
+shutter is laid into the mouth over the lip and slid back. The crown is not
+involved and may already be bonded.
+
+The lip is not continuous: it spans v -78.75..-72.35 at u +-100 and is **clear at
+u = 0** (the cable notch).
+
+**The sill cap is the retainer.** Seated it occupies v -72.95..-62.93 with its
+underside at w 139.45 - 0.775 mm into the door's path - so with the cap on, the
+shutter can neither lift out at the mouth nor slide forward past the lip. Take
+the two M3s out and the cap off, and the shutter comes back out the same way it
+went in.
+
+Assembly order is therefore:
+
+1. Dowel and bond the crown to the base.
+2. Feed the shutter in through the sill mouth and slide it back.
+3. Fit the sill cap (2 x M3) - this traps the shutter.
+4. Tablet carrier in, tilt-first.
+
+**The shutter is fully serviceable.** A damaged panel is replaced by removing the
+sill cap.
