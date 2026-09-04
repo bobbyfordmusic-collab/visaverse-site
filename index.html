@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vis-A-Verse — Lyrics Teleprompter for Performing Musicians</title>
+  <meta name="description" content="Vis-A-Verse is a lyrics teleprompter for performing musicians. Big readable lyrics, setlists, foot pedal support, fully offline, no accounts, no tracking.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, system-ui, sans-serif;
+      background: #1a1a2e;
+      color: #eaeaea;
+      line-height: 1.7;
+    }
+    a { color: #e94560; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      text-align: center;
+      padding: 88px 0 64px;
+      background: linear-gradient(180deg, #16213e 0%, #1a1a2e 100%);
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      background: #0f3460;
+      margin-bottom: 24px;
+    }
+    h1 { font-size: 40px; letter-spacing: -0.5px; }
+    h1 .accent { color: #e94560; }
+    .tagline { font-size: 20px; color: #b8b8c8; margin-top: 12px; }
+    .cta {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 14px 32px;
+      background: #e94560;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 17px;
+      border-radius: 12px;
+    }
+    .cta:hover { background: #d63a54; }
+    .cta-note { margin-top: 12px; font-size: 14px; color: #8888a0; }
+
+    .prompter {
+      margin: 56px auto 0;
+      max-width: 560px;
+      background: #000;
+      border: 1px solid #2a2a45;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .prompter p { font-size: 26px; font-weight: 700; line-height: 1.5; }
+    .prompter .past { color: #444; }
+    .prompter .current { color: #e94560; }
+    .prompter .next { color: #999; }
+
+    section { padding: 64px 0; }
+    h2 { font-size: 28px; text-align: center; margin-bottom: 40px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #16213e;
+      border: 1px solid #2a2a45;
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .card .icon { font-size: 28px; }
+    .card h3 { font-size: 17px; margin: 12px 0 6px; color: #fff; }
+    .card p { font-size: 15px; color: #b8b8c8; }
+
+    .privacy-strip {
+      background: #16213e;
+      border-top: 1px solid #2a2a45;
+      border-bottom: 1px solid #2a2a45;
+      text-align: center;
+    }
+    .privacy-strip p { max-width: 620px; margin: 0 auto; color: #b8b8c8; }
+    .privacy-strip strong { color: #fff; }
+
+    footer {
+      text-align: center;
+      padding: 48px 0 56px;
+      font-size: 14px;
+      color: #8888a0;
+    }
+    footer nav { margin-bottom: 12px; }
+    footer nav a { margin: 0 12px; }
+
+    @media (max-width: 520px) {
+      h1 { font-size: 30px; }
+      .tagline { font-size: 17px; }
+      .prompter p { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="logo" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="1.8" stroke-linecap="round">
+          <rect x="9" y="2.5" width="6" height="11" rx="3"/>
+          <path d="M5 11a7 7 0 0 0 14 0"/>
+          <path d="M12 18v3.5"/>
+          <path d="M8.5 21.5h7"/>
+        </svg>
+      </div>
+      <h1>Vis-<span class="accent">A</span>-Verse</h1>
+      <p class="tagline">The lyrics teleprompter built for performing musicians.</p>
+      <a class="cta" href="mailto:bobbalee51@gmail.com?subject=Vis-A-Verse">Get the App</a>
+      <p class="cta-note">Coming soon to the App Store</p>
+
+      <div class="prompter" aria-hidden="true">
+        <p>
+          <span class="past">The house lights dim, the crowd goes still,</span><br>
+          <span class="current">Your words scroll by, steady and bright —</span><br>
+          <span class="next">Never miss a verse again tonight.</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>Everything you need on stage</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">🎤</div>
+          <h3>Big, readable lyrics</h3>
+          <p>Auto-scrolling text sized for the stage. Adjust speed and font size so you can read from across the room.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📋</div>
+          <h3>Setlists</h3>
+          <p>Organize your songs into setlists for each gig and move through the night without touching a screen between tunes.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🦶</div>
+          <h3>Foot pedal support</h3>
+          <p>Hands-free control with Bluetooth page turners like AirTurn and Donner. Keep playing while the lyrics keep moving.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✈️</div>
+          <h3>Works completely offline</h3>
+          <p>No signal at the venue? No problem. Everything lives on your device — no internet needed after installation.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔗</div>
+          <h3>Share setlists</h3>
+          <p>Send a setlist to your bandmates as a simple link. Encoded right in the URL — no server, no account.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📲</div>
+          <h3>Easy library transfer</h3>
+          <p>Export your whole library and AirDrop it to another device in seconds. Your songs go where you go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy-strip">
+    <div class="wrap">
+      <h2>Your songs are yours</h2>
+      <p><strong>Vis-A-Verse collects nothing.</strong> No accounts, no analytics, no tracking, no network requests. Every song, setlist, and setting is stored only on your device. Read the full <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:bobbalee51@gmail.com">Contact</a>
+      </nav>
+      <p>© 2026 Bobby Ford. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
